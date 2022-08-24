@@ -17,9 +17,9 @@
 
     
 
-      <div class="container">
+      
         @yield('container')
-      </div>
+     
    
 
     <!-- Optional JavaScript -->

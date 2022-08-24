@@ -20,11 +20,30 @@ Route::get('/login', function () {
     ]);
 })->name('login');
 
+Route::get('/', function () {
+    return view('login', [
+        "title" => "login"
+    ]);
+});
+
 Route::get('/dashboard', function () {
-    return view('welcome', [
+    return view('dashboard', [
         "title" => "dashboard"
     ]);
 })->middleware('auth');
+
+Route::get('/presensi_privat', function () {
+    return view('presensi_private', [
+        "title" => "presensi"
+    ]);
+})->middleware('auth');
+
+Route::get('/presensi_reguler', function () {
+    return view('presensi_reguler', [
+        "title" => "presensi"
+    ]);
+})->middleware('auth');
+
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);

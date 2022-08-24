@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.col-2 {
+    background-color: rgb(35, 35, 35);
+    height: 97vh;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.col-2 > img {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.col-2 > h5 {
+    margin-bottom: 2vh;
+}
+
+.col-2 > .logout {
+    margin-top: 46vh;
+}
+
+h5 > a {
+    text-decoration: none;
+    color: white;
+}
+
+u {
+    text-decoration-color: white;
+}
+
+.col-10 {
+    padding-top: 8vh;
+}
+
+.col-10 > .container {
+    margin-top: 5vh;
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem 10rem;
+}
+
+.container > .card {
+    width: 28rem;
+    height: 10rem;
+}
+
+.container > .tentor {
+    background-color: #42855B;
+    color: #EAE509;
+}
+
+.container > .gaji {
+    background-color: #CD1818;
+    color: #F4E185;
+}
+
+.card-text {
+    margin-top: 4vh;
+    align-items: center;
+    text-align: center;
+}
+
+.link :hover {
+    color: #42855B;
+}
