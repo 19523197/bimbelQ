@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jadwal;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreJadwalRequest;
 use App\Http\Requests\UpdateJadwalRequest;
 
@@ -34,9 +35,19 @@ class JadwalController extends Controller
      * @param  \App\Http\Requests\StoreJadwalRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreJadwalRequest $request)
+    public function store(Request $request)
     {
         //
+        $validate = [
+            'tentor'=>'required',
+            'sesi'=>'required',
+            'tanggal'=>'required',
+            'program'=>'required'
+        ];
+
+        $validateData = $request->validate($validate);
+
+        Jadwal::create($validateData);
     }
 
     /**

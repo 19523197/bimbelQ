@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2022 at 02:37 AM
+-- Generation Time: Aug 25, 2022 at 03:43 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -40,8 +40,6 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
-=======
 -- Table structure for table `gajis`
 --
 
@@ -134,7 +132,6 @@ INSERT INTO `mentors` (`id`, `name`, `mapel`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 -- Table structure for table `migrations`
 --
 
@@ -152,9 +149,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-<<<<<<< HEAD
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
-=======
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_08_24_032222_create_siswas_table', 1),
 (6, '2022_08_24_033156_create_mentors_table', 1),
@@ -165,7 +159,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2022_08_24_124448_create_gajis_table', 1),
 (12, '2022_08_24_140106_siswa_program', 1),
 (13, '2022_08_25_001132_siswa_jadwal', 1);
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 
 -- --------------------------------------------------------
 
@@ -201,8 +194,6 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
-=======
 -- Table structure for table `programs`
 --
 
@@ -308,7 +299,6 @@ CREATE TABLE `tagihans` (
 -- --------------------------------------------------------
 
 --
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 -- Table structure for table `users`
 --
 
@@ -328,11 +318,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-<<<<<<< HEAD
-(1, 'admin', 'fahri279@gmail.com', NULL, '$2y$10$MMPUDIndpk693ggad0C4w.3jVwI9xp3asdET.GjS4X5KRag1tah5C', NULL, '2022-08-22 20:45:56', '2022-08-22 20:45:56');
-=======
 (1, 'admin', 'fahri279@gmail.com', NULL, '$2y$10$KKm9m6gc./4jl5T.gsA7euVmNI.PHoV8xiW.2QzvXZlxfJiL7TaTm', NULL, '2022-08-24 17:36:40', '2022-08-24 17:36:40');
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 
 --
 -- Indexes for dumped tables
@@ -346,8 +332,6 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
-<<<<<<< HEAD
-=======
 -- Indexes for table `gajis`
 --
 ALTER TABLE `gajis`
@@ -366,7 +350,6 @@ ALTER TABLE `mentors`
   ADD PRIMARY KEY (`id`);
 
 --
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -387,8 +370,6 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
-<<<<<<< HEAD
-=======
 -- Indexes for table `programs`
 --
 ALTER TABLE `programs`
@@ -407,7 +388,6 @@ ALTER TABLE `tagihans`
   ADD PRIMARY KEY (`id`);
 
 --
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -425,12 +405,6 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
-<<<<<<< HEAD
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-=======
 -- AUTO_INCREMENT for table `gajis`
 --
 ALTER TABLE `gajis`
@@ -453,7 +427,6 @@ ALTER TABLE `mentors`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -462,8 +435,6 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
-<<<<<<< HEAD
-=======
 -- AUTO_INCREMENT for table `programs`
 --
 ALTER TABLE `programs`
@@ -482,7 +453,6 @@ ALTER TABLE `tagihans`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
->>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`

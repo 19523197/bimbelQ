@@ -20,7 +20,7 @@
         </div>
         <div class="row tgl">
             <div class="col-9">
-                <h6>Hari Senin 22 Agustus 2022</h6>
+                <h6>{{Carbon\Carbon::now()->format('D-d-M-Y')}}</h6>
             </div>
             <div class="col">
                 <a href="/tambah_jadwal" class="tmbh_jadwal">+</a>
@@ -30,51 +30,6 @@
             <div class="row">
                 <div class="col-3 text-white">Sesi Siang</div>
                 <div class="col-7"></div>
-            </div>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-9  text-white">
-                    <p>Tentor <span>: Rashid Maulana Jatri</span></p>
-                    <p>Mata Pelajaran</p>
-                </div>
-                <div class="col text-white text-center">
-                    <p>X SMP</p>
-                    <p>Reguler</p>
-                </div>
-            </div>
-        </div>
-        <div class="container blue">
-            <div class="row">
-                <div class="col-3 text-white">Sesi Sore</div>
-                <div class="col-7"></div>
-            </div>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-9  text-white">
-                    <p>Tentor <span>: Muhammad Riko Bediatra</span></p>
-                    <p>Mata Pelajaran</p>
-                </div>
-                <div class="col text-white text-center">
-                    <p>XI SMP</p>
-                    <p>Private</p>
-                </div>
-            </div>
-        </div>
-        <div class="container yellow">
-            <div class="row">
-                <div class="col-3 text-white">Sesi Malam</div>
-                <div class="col-7"></div>
-            </div>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-9  text-white">
-                    <p>Tentor <span>: Muhammad Fachri Ramadhan</span></p>
-                    <p>Mata Pelajaran</p>
-                </div>
-                <div class="col text-white text-center">
-                    <p>XII SMP</p>
-                    <p>Reguler</p>
-                </div>
             </div>
         </div>
     </div>
