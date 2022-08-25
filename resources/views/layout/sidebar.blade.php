@@ -4,7 +4,7 @@
     <h5><a href="/jadwal" class="link {{ ($title === "jadwal") ? 'text-primary' : '' }}">Jadwal Kegiatan</a></h5>
     <h5><a href="/presensi_privat" class="link {{ ($title === "presensi") ? 'text-primary' : '' }}">Presensi</a></h5>
     <h5><a href="#" class="link {{ ($title === "tagihan") ? 'text-primary' : '' }}">Tagihan Siswa</a></h5>
-    <h5><a href="#" class="link {{ ($title === "gaji") ? 'text-primary' : '' }}">Gaji Tentor</a></h5>
+    <h5><a href="/gaji" class="link {{ ($title === "gaji") ? 'text-primary' : '' }}">Gaji Tentor</a></h5>
     <!-- logout -->
     <form action="/logout" method="post">
 

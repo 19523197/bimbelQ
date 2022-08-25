@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\GajiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -32,18 +34,11 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware('auth');
 
-Route::get('/presensi_privat', function () {
-    return view('presensi_private', [
-        "title" => "presensi"
-    ]);
-})->middleware('auth');
+Route::get('/presensi_private', [Controller::class, 'presensi_private'])->middleware('auth');
 
-Route::get('/presensi_reguler', function () {
-    return view('presensi_reguler', [
-        "title" => "presensi"
-    ]);
-})->middleware('auth');
+Route::get('/presensi_reguler', [Controller::class, 'presensi_reguler'])->middleware('auth');
 
+<<<<<<< HEAD
 Route::get('/jadwal', function (){
     return view('jadwal', [
         "title" => "jadwal"
@@ -55,6 +50,9 @@ Route::get('/tambah_jadwal', function (){
         "title" => "Tambah Jadwal"
     ]);
 }) -> middleware('auth');
+=======
+Route::get('/gaji', [GajiController::class, 'index'])->middleware('auth');
+>>>>>>> f0f17cc8e16d742b2ad2675afacf0ce3fab7770a
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);
