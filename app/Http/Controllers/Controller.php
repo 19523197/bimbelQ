@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Jamsesi;
-use App\Models\Mentor;
 use App\Models\Siswa;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Models\Jadwal;
+use App\Models\Mentor;
+use App\Models\Jamsesi;
+use App\Models\Program;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
@@ -24,11 +26,14 @@ class Controller extends BaseController
         ]);
     }
 
-    public function presensi_reguler()
+    public function presensi_reguler(Jadwal $jadwal)
     {
         return view('presensi_reguler', [
             "title" => "presensi",
-
+            "mentors" => Mentor::latest()->get(),
+            "siswas" => Siswa::latest()->get(),
+            "sesi" => Jamsesi::latest()->get(),
+            "jadwal" => $jadwal,
         ]);
     }
 }

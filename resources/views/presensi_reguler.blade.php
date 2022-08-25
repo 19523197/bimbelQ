@@ -27,12 +27,8 @@
                 <h2 class="mb-4">Reguler</h2>
                 @csrf
 
-                <h6>Nama Mentor : Rashid Adani Maulana Jatri</h6>
-                <h6>Sesi : <select name="sesi" id="sesi">
-                    <option value="Siang">Siang</option> 
-                    <option value="Sore">Sore</option>    
-                    <option value="Malam">Malam</option>       
-                </select></h6>
+                <h6>Nama Mentor : {{ $jadwal->mentor->name }}</h6>
+                <h6>Sesi : {{ $jadwal->jamsesi->nama_sesi }}</h6>
 
                 <h6>Jam Masuk Mentor : <input type="time"></h6>
                 
@@ -46,26 +42,17 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td >
-                            <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
-                            </td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <<td>Thornton</td>
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
-                        
-                      </tr>
+                      @foreach ($siswas->program->where('id',$jadwal->program->id) as $siswa)
+                        <tr>
+                          <th scope="row">{{ $loop->index + 1}}</th>
+                          <td>{{ $siswa->name }}</td>
+                          <td >
+                              <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+                              </td>
+                          
+                        </tr>
+                      @endforeach
+                      
                     </tbody>
                   </table>
 

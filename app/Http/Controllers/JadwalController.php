@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Siswa;
 use App\Models\Jadwal;
+use App\Models\Mentor;
+use App\Models\Jamsesi;
+use App\Models\Program;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreJadwalRequest;
 use App\Http\Requests\UpdateJadwalRequest;
 
@@ -26,6 +32,12 @@ class JadwalController extends Controller
     public function create()
     {
         //
+        return view('tambah_jadwal', [
+            "title" => "jadwal",
+            "mentors" => Mentor::latest()->get(),
+            "sesis" => Jamsesi::latest()->get(),
+            "programs" => Program::latest()->get()
+        ]);
     }
 
     /**
@@ -34,9 +46,29 @@ class JadwalController extends Controller
      * @param  \App\Http\Requests\StoreJadwalRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreJadwalRequest $request)
+    public function store(Request $request)
     {
+
+
         //
+        $validate = [
+            'jamsesi_id' => 'required',
+            'program_id' => 'required',
+            'mentor_id' => 'required',
+            'tanggal' => 'required',
+
+        ];
+
+
+
+        $validateData = $request->validate($validate);
+
+        if (Jadwal::where('tanggal', $request->tanggal)->where('jamsesi_id', $request->jamsesi_id)->first()) {
+            return redirect('/jadwal')->with('success', 'jadwal sudah ada');
+        } else {
+            Jadwal::create($validateData);
+            return redirect('/jadwal')->with('success', 'jadwal berhasil ditambah');
+        }
     }
 
     /**
@@ -48,6 +80,10 @@ class JadwalController extends Controller
     public function show(Jadwal $jadwal)
     {
         //
+        return view('jadwal', [
+            "title" => "jadwal",
+            "jadwal" => Jadwal::where('tanggal', '=', Carbon::now()->format('Y-m-d'))->oldest()->get(),
+        ]);
     }
 
     /**

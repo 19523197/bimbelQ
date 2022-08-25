@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\GajiController;
+use App\Http\Controllers\JadwalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -36,10 +37,15 @@ Route::get('/dashboard', function () {
 
 Route::get('/presensi_private', [Controller::class, 'presensi_private'])->middleware('auth');
 
-Route::get('/presensi_reguler', [Controller::class, 'presensi_reguler'])->middleware('auth');
+Route::get('/presensi_reguler/{jadwal:id}', [Controller::class, 'presensi_reguler'])->middleware('auth');
+
+Route::get('/jadwal', [JadwalController::class, 'show'])->middleware('auth');
+
+Route::get('/tambah_jadwal', [JadwalController::class, 'create'])->middleware('auth');
 
 Route::get('/gaji', [GajiController::class, 'index'])->middleware('auth');
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/tambah_jadwal', [JadwalController::class, 'store']);

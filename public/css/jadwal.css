@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.col-2 {
+    background-color: rgb(35, 35, 35);
+    height: 97vh;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.col-2 > img {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.col-2 > h5 {
+    margin-bottom: 2vh;
+}
+
+.col-2 > .logout {
+    margin-top: 46vh;
+}
+
+h5 > a {
+    text-decoration: none;
+    color: white;
+}
+
+u {
+    text-decoration-color: white;
+}
+
+.col-10 {
+    padding-top: 8vh;
+}
+
+.tgl {
+    margin-top: 2vh;
+}
+
+.tmbh_jadwal {
+    text-decoration: none;
+    background-color: #66C94D;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 2rem;
+    width: 100px;
+}
+
+
+.text-white {
+    color: #fff;
+    font-weight: 700;
+}
+
+.container {
+    background-color: #66C94D;
+    border-radius: 10px;
+    margin-top: 4rem;
+    width: 75vw;
+    margin-left: 2rem;
+}
+
+.blue {
+    background-color: #003865;
+}
+
+.yellow {
+    background-color: #FFCA03;
+}
+
+.col-9, .col-7 {
+    border-right: 4px solid #fff;
+}
+
