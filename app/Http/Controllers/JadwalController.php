@@ -9,6 +9,7 @@ use App\Models\Mentor;
 use App\Models\Jamsesi;
 use App\Models\Program;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreJadwalRequest;
 use App\Http\Requests\UpdateJadwalRequest;
 
@@ -79,10 +80,16 @@ class JadwalController extends Controller
      */
     public function show(Jadwal $jadwal)
     {
+
+        $jadwalscope = Jadwal::latest();
+
+        if (request('tanggal')) {
+            $jadwalscope->where('tanggal', request('tanggal'))->oldest();
+        }
         //
         return view('jadwal', [
             "title" => "jadwal",
-            "jadwal" => Jadwal::where('tanggal', '=', Carbon::now()->format('Y-m-d'))->oldest()->get(),
+            "jadwal" => $jadwalscope->get(),
         ]);
     }
 

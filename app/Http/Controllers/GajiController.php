@@ -89,4 +89,8 @@ class GajiController extends Controller
     {
         //
     }
+
+    public function hitung_gaji(Gaji $gaji)
+    {
+    }
 }

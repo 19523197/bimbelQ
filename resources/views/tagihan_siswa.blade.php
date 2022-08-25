@@ -22,7 +22,7 @@
      @include('layout.sidebar')
       <!-- content -->
       <div class="col-10">
-        <h3>Daftar Gaji Tentor</h3>
+        <h3>Daftar Tagihan Siswa</h3>
         <h6>Bulan Agustus 2022</h6>
         <div class="container">
           <!-- tabel -->
@@ -30,21 +30,20 @@
             <thead>
               <tr>
                 <th scope="col">No.</th>
-                <th scope="col">Nama Tentor</th>
-                <th scope="col">Total Gaji Tentor</th>
-                <th scope="col">Status Gaji Tentor</th>
+                <th scope="col">Nama Siswa</th>
+                <th scope="col">Total Tagihan</th>
+                <th scope="col">Status Pembayaran</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($mentors as $mentor)
+              @foreach ($siswas as $siswa)
               <tr>
                 <th scope="row">{{ $loop->index + 1}}</th>
-                <td>{{ $mentor->name }}</td>
-                <td>{{ $mentor->gaji->jumlah }}</td>
+                <td>{{ $siswa->name }}</td>
+                <td>Rp 2.500.000</td>
                 <td>Belum dibayar</td>
               </tr>
               @endforeach
-              
             </tbody>
           </table>
           <div class="tombol">

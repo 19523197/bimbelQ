@@ -11,6 +11,6 @@ class Program extends Model
 
     public function siswa()
     {
-        return $this->belongsToMany(Siswa::class);
+        return $this->belongsToMany(Siswa::class, 'siswa_program');
     }
 }

@@ -43,5 +43,10 @@ class SiswaSeeder extends Seeder
 
 
         ]);
+
+        $siswas = Siswa::latest()->get();
+        foreach ($siswas as $siswa) {
+            $siswa->program()->attach(rand(1, 6));
+        }
     }
 }

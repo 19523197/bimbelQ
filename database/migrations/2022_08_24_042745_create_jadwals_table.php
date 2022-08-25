@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('program_id');
             $table->foreignId('mentor_id');
             $table->date('tanggal');
+            $table->boolean('status_presensi')->default(0);
             $table->dateTime('mentor_presensi')->nullable();
             $table->timestamps();
         });

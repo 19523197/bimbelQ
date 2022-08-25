@@ -44,16 +44,8 @@ class DatabaseSeeder extends Seeder
             ProgramSeeder::class,
         ]);
 
-        Jadwal::create([
-            'jamsesi_id' => 1,
-            'program_id' => 1,
-            'mentor_id' => 1,
-            'tanggal' => Carbon::now(),
-            'mentor_presensi' => Carbon::now(),
-        ]);
+
 
         $siswa = Siswa::find(1);
-
-        $siswa->jadwal()->attach(1);
     }
 }

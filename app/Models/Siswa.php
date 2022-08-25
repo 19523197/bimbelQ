@@ -11,7 +11,7 @@ class Siswa extends Model
 
     public function program()
     {
-        return $this->hasMany(Program::class, 'siswa_program');
+        return $this->belongsToMany(Program::class, 'siswa_program');
     }
 
     public function jadwal()

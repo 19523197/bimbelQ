@@ -23,15 +23,16 @@
 
         <div class="card mt-5 border border-dark border-3 rounded">
             
-            <form action="/presensi_reguler" method="post" class="p-5">
+            <form action="/presensi_reguler/{{ $jadwal->id }}/presensi" method="post" class="p-5">
                 <h2 class="mb-4">Reguler</h2>
                 @csrf
 
                 <h6>Nama Mentor : {{ $jadwal->mentor->name }}</h6>
                 <h6>Sesi : {{ $jadwal->jamsesi->nama_sesi }} </h6>
+                <input type="hidden" name="mentor_id" id="mentor_id" value="{{ $jadwal->mentor->id }}">
 
                 <h6>Jam Masuk Mentor : <input type="time" name="tanggal" id="tanggal" ></h6>
-                
+                <input type="hidden" value="{{ $jadwal->id }}" name="jadwal_id" id="jadwal_id">
                <h5 class="mt-5">Siswa</h5>
                 <table class="table table-hover table-lg justify-content-center">
                     <thead>
@@ -47,7 +48,7 @@
                           <th scope="row">{{ $loop->index + 1}}</th>
                           <td>{{ $siswa->name }}</td>
                           <td >
-                              <input class="form-check-input " type="checkbox" value="hadir" name="hadir[]" id="flexCheckDefault">
+                              <input class="form-check-input " type="checkbox" value="{{ $siswa->id }}" name="hadir[]" id="flexCheckDefault">
                               </td>
                           
                         </tr>

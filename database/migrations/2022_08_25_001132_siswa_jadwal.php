@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('siswa_jadwal', function (Blueprint $table) {
             $table->foreignId('siswa_id');
             $table->foreignId('jadwal_id');
+
             $table->string('status')->nullable();
         });
     }

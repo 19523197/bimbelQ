@@ -14,7 +14,7 @@ class Jadwal extends Model
 
 
 
-    protected $fillable = ['mentor_id', 'program_id', 'jamsesi_id', 'tanggal'];
+    protected $fillable = ['mentor_id', 'program_id', 'jamsesi_id', 'tanggal', 'status_presensi'];
 
     public function jamsesi()
     {
@@ -29,5 +29,10 @@ class Jadwal extends Model
     public function mentor()
     {
         return $this->belongsTo(Mentor::class);
+    }
+
+    public function siswa()
+    {
+        return $this->belongsToMany(Siswa::class, 'siswa_jadwal')->withPivot('status');
     }
 }
