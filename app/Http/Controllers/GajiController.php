@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gaji;
+use App\Models\Mentor;
 use App\Http\Requests\StoreGajiRequest;
 use App\Http\Requests\UpdateGajiRequest;
 
@@ -16,6 +17,11 @@ class GajiController extends Controller
     public function index()
     {
         //
+        return view('gaji', [
+            "title" => "gaji",
+            "mentors" => Mentor::latest()->get(),
+            "gajis" => Gaji::latest()->get(),
+        ]);
     }
 
     /**

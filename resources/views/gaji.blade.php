@@ -36,24 +36,15 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($mentors as $mentor)
               <tr>
-                <th scope="row">1</th>
-                <td>Rashid Adani Maulana Jatri</td>
+                <th scope="row">{{ $loop->index + 1}}</th>
+                <td>{{ $mentor->name }}</td>
                 <td>Rp 2.500.000</td>
                 <td>Belum dibayar</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Muhammad Riko Bediatra</td>
-                <td>Rp 1.000.000</td>
-                <td>Belum dibayar</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Muhammad Fachri Ramadhan</td>
-                <td>Rp 1.000.000</td>
-                <td>Belum dibayar</td>
-              </tr>
+              @endforeach
+              
             </tbody>
           </table>
           <div class="tombol">
