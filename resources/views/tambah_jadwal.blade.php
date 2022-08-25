@@ -18,28 +18,51 @@
                 @csrf
 
                 <label for="">Nama Tentor</label>
-                <select name="tentor" id="" class="form-control mb-2">
+                <select name="mentor_id" id="mentor_id" class="form-control mb-2">
                     @foreach($mentors as $mentor)
                         <option value="{{$mentor->id}}">{{$mentor->name ." - " .$mentor->mapel}}</option>
                     @endforeach
                 </select>
+                @error('mentor_id')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+          @enderror
+
+
 
                 <label for="">Jadwal Sesi</label>
-                <select name="sesi" id="" class="form-control mb-2">
+                <select name="jamsesi_id" id="sesi_id" class="form-control mb-2">
                     @foreach($sesis as $sesi)
                         <option value="{{$sesi->id}}">{{$sesi->nama_sesi . " (" . Carbon\Carbon::parse($sesi->Waktu_mulai)->format('H:i') . " - " . Carbon\Carbon::parse($sesi->Waktu_selesai)->format('H:i') . ")"}}</option>
                     @endforeach
                 </select>
+                @error('jamsesi_id')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+          @enderror
 
                 <label for="">Tanggal Sesi</label>
-                <input type="date" class="form-control mb-2" name="tanggal"/>
+                <input type="date" class="form-control mb-2" name="tanggal" id="tanggal">
+                @error('tanggal')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+              @enderror
+
 
                 <label for="">Tipe Sesi</label>
-                <select name="program" id="" class="form-control mb-2">
+                <select name="program_id" id="program_id" class="form-control mb-2">
                     @foreach($programs as $program)
                         <option value="{{$program->id}}">{{$program->nama}}</option>
                     @endforeach
                 </select>
+                @error('program_id')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+          @enderror
 
                 <input type="submit">
             </form>
