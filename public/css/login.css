@@ -2,8 +2,8 @@
     z-index: 2;
 }
 
-.form-signin .form-floating:focus-within label {
-   color: white;
+.form-signin .form-floating:focus-within label{
+    visibility: hidden;
 }
 
 .form-signin input[type="email"] {

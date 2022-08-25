@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -32,11 +33,7 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware('auth');
 
-Route::get('/presensi_privat', function () {
-    return view('presensi_private', [
-        "title" => "presensi"
-    ]);
-})->middleware('auth');
+Route::get('/presensi_private', [Controller::class, 'presensi_private'])->middleware('auth');
 
 Route::get('/presensi_reguler', function () {
     return view('presensi_reguler', [
@@ -44,6 +41,11 @@ Route::get('/presensi_reguler', function () {
     ]);
 })->middleware('auth');
 
+Route::get('/gaji', function () {
+    return view('gaji', [
+        "title" => "gaji"
+    ]);
+})->middleware('auth');
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);
