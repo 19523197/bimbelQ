@@ -37,15 +37,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/presensi_private', [Controller::class, 'presensi_private'])->middleware('auth');
 
-Route::get('/presensi_reguler', [Controller::class, 'presensi_reguler'])->middleware('auth');
+Route::get('/presensi_reguler/{jadwal:id}', [Controller::class, 'presensi_reguler'])->middleware('auth');
 
-Route::get('/jadwal', function (){
-    return view('jadwal', [
-        "title" => "jadwal"
-    ]);
-})->middleware('auth');
+Route::get('/jadwal', [JadwalController::class, 'show'])->middleware('auth');
 
-Route::get('/tambah_jadwal', [Controller::class, 'tambah_jadwal'])->middleware('auth');
+Route::get('/tambah_jadwal', [JadwalController::class, 'create'])->middleware('auth');
 
 Route::get('/gaji', [GajiController::class, 'index'])->middleware('auth');
 

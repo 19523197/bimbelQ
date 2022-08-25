@@ -2,25 +2,32 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Mentor;
+use App\Models\Jamsesi;
+use App\Models\Program;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Jadwal extends Model
 {
     use HasFactory;
 
+
+
+    protected $fillable = ['mentor_id', 'program_id', 'jamsesi_id', 'tanggal'];
+
     public function jamsesi()
     {
-        return $this->hasOne(jamsesi::class);
+        return $this->belongsTo(Jamsesi::class);
     }
 
     public function program()
     {
-        return $this->hasOne(program::class);
+        return $this->belongsTo(Program::class);
     }
 
     public function mentor()
     {
-        return $this->hasOne(mentor::class);
+        return $this->belongsTo(Mentor::class);
     }
 }
