@@ -31,7 +31,17 @@
                 <div class="col-3 text-white">Sesi Siang</div>
                 <div class="col-7"></div>
             </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-9  text-white">
+                    <p>Tentor <span>: Rashid Maulana Jatri</span></p>
+                    <p>Mata Pelajaran</p>
+                </div>
+                <div class="col text-white text-center">
+                    <p>X SMP</p>
+                    <p>Reguler</p>
+                </div>
+            </div>
         </div>
-    </div>
 </div>
 @endsection
