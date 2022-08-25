@@ -44,6 +44,17 @@ Route::get('/presensi_reguler', function () {
     ]);
 })->middleware('auth');
 
+Route::get('/jadwal', function (){
+    return view('jadwal', [
+        "title" => "jadwal"
+    ]);
+})->middleware('auth');
+
+Route::get('/tambah_jadwal', function (){
+    return view('tambah_jadwal', [
+        "title" => "Tambah Jadwal"
+    ]);
+}) -> middleware('auth');
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);

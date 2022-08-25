@@ -33,41 +33,14 @@ u {
     text-decoration-color: white;
 }
 
-.col-10 {
-    padding-top: 8vh;
+.col-7 > h1 {
+    margin-top: 10vh;
+    margin-left: 2vw;
 }
 
-.col-10 > .container {
-    margin-top: 5vh;
+.container-md {
+    border: 2px solid #000;
     height: 60vh;
-    width: 80vw;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5rem 10rem;
-}
-
-.container > .card {
-    width: 28rem;
-    height: 10rem;
-}
-
-.container > .tentor {
-    background-color: #42855B;
-    color: #EAE509;
-}
-
-.container > .gaji {
-    background-color: #CD1818;
-    color: #F4E185;
-}
-
-.card-text {
+    border-radius: 10px;
     margin-top: 4vh;
-    align-items: center;
-    text-align: center;
 }
-
-.link :hover {
-    color: #42855B;
-}
-
