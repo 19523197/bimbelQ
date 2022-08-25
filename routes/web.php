@@ -45,6 +45,8 @@ Route::get('/tambah_jadwal', [JadwalController::class, 'create'])->middleware('a
 
 Route::get('/gaji', [GajiController::class, 'index'])->middleware('auth');
 
+Route::get('/tagihan_siswa', [Controller::class, 'tagihan_siswa'])->middleware('auth');
+
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);

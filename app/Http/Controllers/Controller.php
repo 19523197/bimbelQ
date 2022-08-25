@@ -7,6 +7,7 @@ use App\Models\Jadwal;
 use App\Models\Mentor;
 use App\Models\Jamsesi;
 use App\Models\Program;
+use App\Models\Tagihan;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -34,6 +35,15 @@ class Controller extends BaseController
             "siswas" => Siswa::latest()->get(),
             "sesi" => Jamsesi::latest()->get(),
             "jadwal" => $jadwal,
+        ]);
+    }
+
+    public function tagihan_siswa()
+    {
+        return view('tagihan_siswa', [
+            "title" => "tagihan siswa",
+            "siswas" => Siswa::latest()->get(),
+            "tagihans" => Tagihan::latest()->get()
         ]);
     }
 }
