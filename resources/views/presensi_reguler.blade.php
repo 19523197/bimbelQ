@@ -28,26 +28,26 @@
                 @csrf
 
                 <h6>Nama Mentor : {{ $jadwal->mentor->name }}</h6>
-                <h6>Sesi : {{ $jadwal->jamsesi->nama_sesi }}</h6>
+                <h6>Sesi : {{ $jadwal->jamsesi->nama_sesi }} </h6>
 
-                <h6>Jam Masuk Mentor : <input type="time"></h6>
+                <h6>Jam Masuk Mentor : <input type="time" name="tanggal" id="tanggal" ></h6>
                 
                <h5 class="mt-5">Siswa</h5>
                 <table class="table table-hover table-lg justify-content-center">
                     <thead>
                       <tr class="table-dark">
-                        <th scope="col" style="width: 10%">No</th>
-                        <th scope="col" style="width: 80%">Nama</th>
+                        <th scope="col" style="width: 5%">No</th>
+                        <th scope="col" style="width: 85%">Nama</th>
                         <th scope="col" style="width: 10%">Hadir</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($siswas->program->where('id',$jadwal->program->id) as $siswa)
+                      @foreach ($siswas as $siswa)
                         <tr>
                           <th scope="row">{{ $loop->index + 1}}</th>
                           <td>{{ $siswa->name }}</td>
                           <td >
-                              <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
+                              <input class="form-check-input " type="checkbox" value="hadir" name="hadir[]" id="flexCheckDefault">
                               </td>
                           
                         </tr>

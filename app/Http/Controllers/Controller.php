@@ -7,6 +7,7 @@ use App\Models\Jadwal;
 use App\Models\Mentor;
 use App\Models\Jamsesi;
 use App\Models\Program;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -35,5 +36,13 @@ class Controller extends BaseController
             "sesi" => Jamsesi::latest()->get(),
             "jadwal" => $jadwal,
         ]);
+    }
+
+    public function presensi_reguler_submit(Request $request)
+    {
+    }
+
+    public function presensi_private_submit(Request $request)
+    {
     }
 }

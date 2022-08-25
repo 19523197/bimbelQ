@@ -28,21 +28,21 @@
                 @csrf
 
                 <label for="">Nama Mentor</label>
-                <select name="" id="" class="form-control mb-2">
+                <select name="mentor_id" id="" class="form-control mb-2">
                     @foreach ($mentors as $mentor)
                         <option value="{{ $mentor->id }}">{{ $mentor->name }}</option>
                     @endforeach
                 </select>
 
                 <label for="">Sesi</label>
-                <select name="" id="" class="form-control mb-2">
+                <select name="sesi_id" id="" class="form-control mb-2">
                     @foreach ($sesi as $jam)
                         <option value="{{ $jam->id }}">{{ $jam->nama_sesi . " (" . Carbon\Carbon::parse($jam->Waktu_mulai)->format('H:i') . " - " . Carbon\Carbon::parse($jam->Waktu_selesai)->format('H:i') . ")"}}</option>
                     @endforeach
                 </select>
 
                 <label for="">Murid</label>
-                <select name="" id="" class="form-control mb-2">
+                <select name="siswa_id" id="" class="form-control mb-2">
                     @foreach ($siswas as $siswa)
                         <option value="{{ $siswa->id }}">{{ $siswa->name}}</option>
                     @endforeach

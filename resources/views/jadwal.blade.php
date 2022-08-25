@@ -34,7 +34,7 @@
 
        
         @foreach ($jadwal as $card)
-        <div class="container {{ ($card->jamsesi->nama_sesi == "Sore") ? 'yellow' : '',}}{{ ($card->jamsesi->nama_sesi == "Malam") ? 'blue' : '' }}">
+        <div class="container {{ ($card->jamsesi->nama_sesi == "sore") ? 'yellow' : '',}}{{ ($card->jamsesi->nama_sesi == "malam") ? 'blue' : '' }}">
             <div class="row">
                 <div class="col-3 text-white">{{ $card->jamsesi->nama_sesi }}</div>
                 <div class="col-7"></div>
