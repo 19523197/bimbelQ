@@ -9,6 +9,6 @@
     <form action="/logout" method="post">
 
         @csrf
-        <button type="submit" class="mt-lg-5">Logout</button>
+        <button type="submit" class="btn btn-dark" style="margin-top: 35vh">Logout <img src="{{ asset('img/Vector.png') }}" alt=""></button>
     </form>
 </div>

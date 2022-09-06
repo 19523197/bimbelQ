@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Halaman Gaji Tentor</title>
 
+    <link rel="shortcut icon" href="{{ asset('/img/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/gaji.css') }}" />
 
     <!-- link bootstrap -->
@@ -40,7 +41,7 @@
               <tr>
                 <th scope="row">{{ $loop->index + 1}}</th>
                 <td>{{ $mentor->name }}</td>
-                <td>{{ $mentor->gaji->jumlah }}</td>
+                <td>Rp 1.000.000</td>
                 <td>Belum dibayar</td>
               </tr>
               @endforeach
